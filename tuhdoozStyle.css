@@ -14,17 +14,13 @@ body {
 }
 
 #div_01 {
-	width: 1000px;
-	margin-left: 45.5%;
-	margin-right: 54.5%;
-	
+	max-width: 232px;
+	margin: 0px auto 0px auto;
 }
 
 #div_02 {
-	width: 400px;
-	margin-left: 40%;
-	margin-right: 60%;
-	
+	max-width: 400px;
+	margin: 0px auto 0px auto;
 }
 
 #div_03{

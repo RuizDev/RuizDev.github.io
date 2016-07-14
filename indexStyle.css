@@ -1,15 +1,15 @@
 html {
 	height:100%;
-	margin: 0;
-}
-body {
-	height:100%;
 	background-image: url("homeBG.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
 	border: 1px solid transparent;
 	text-align: center;
+	display: block;
+}
+body {
+	
 }
 #titleDiv {
 
@@ -40,15 +40,16 @@ body {
 }
 .list {
 	margin:10px auto 0px auto;
-	display: flex;
-	max-width:50%;
-	width: 50%;
+	display: block;
+	max-width:75%;
+	width: 75%;
 	overflow: hidden;
 	box-shadow: 0px 0px 3px 1px #838383;
 	border-radius: 10px;
 	background-color: rgba(11, 76, 95, .5);
 	transition: all 0.7s ease;
 	cursor: pointer;
+	padding-bottom: 0px;
 }
 .list:hover {
 	background-color: rgba(11, 76, 95, .7);
@@ -62,10 +63,35 @@ body {
 	color: #04B4AE;
 }
 .listImage{
-	width:75px;
-	height: 75px;
+	width:70px;
+	height: 70px;
+}
+.listSubtitle {
+	margin-left: 20px;
+	margin-right: 25px;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 22px;
+	opacity: .9;
+}
+.listSubDiv {
+	background-color: rgba(54, 54, 54, 0.5);
+	border-radius: 10px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	display: inline-flex;
+	float: right;
+}
+.listDiv {
+	border-radius: 10px;
+	margin-left: 0px;
+	display:inline-flex;
+	float: left;
 }
 #skullIcon
 {
 	width:62px;
+	background-color: black;
+	padding-left: 4.5px;
+	padding-right: 4.5px;
 }
