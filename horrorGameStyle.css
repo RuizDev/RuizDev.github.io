@@ -1,0 +1,60 @@
+body {
+	background-image: url("horrorBG.jpg");
+	height:100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	border: 1px solid transparent;
+	text-align: center;
+}
+#centerColumnDiv {
+	margin:10px auto 10px auto;
+	height:500px;
+	padding: 0;
+	border-radius: 10px;
+	max-width:50%;
+	width: 50%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, .8);
+	transition: all 0.75s ease;
+}
+#titleDiv {
+
+	margin:10px auto 0px auto;
+	height:90px;
+	padding: 0;
+	border-radius: 10px;
+	max-width:35%;
+	width: 35%;
+	overflow: hidden;
+	background-color: rgba(126, 0, 0, .6);
+	transition: all 0.75s ease;
+}
+#titleH1 {
+
+	margin-bottom: 0px;
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	color: #001C22;
+	opacity: 0.9;
+}
+#subtitleP {
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	opacity: 0.9;
+}
+#preview1 {
+	height: 325px;
+	width: 684px;
+}
+.columnTitle {
+	font-family: sans-serif;
+	font-size: 24px;
+	color: red;
+}

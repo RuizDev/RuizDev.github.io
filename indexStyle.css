@@ -37,7 +37,6 @@ body {
 	color: #393939;
 	margin-top: 0px;
 	opacity: 0.9;
-
 }
 .list {
 	margin:10px auto 0px auto;
@@ -49,6 +48,7 @@ body {
 	border-radius: 10px;
 	background-color: rgba(11, 76, 95, .5);
 	transition: all 0.7s ease;
+	cursor: pointer;
 }
 .list:hover {
 	background-color: rgba(11, 76, 95, .7);
@@ -63,4 +63,9 @@ body {
 }
 .listImage{
 	width:75px;
+	height: 75px;
+}
+#skullIcon
+{
+	width:62px;
 }
