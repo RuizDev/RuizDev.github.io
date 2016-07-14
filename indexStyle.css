@@ -1,0 +1,66 @@
+html {
+	height:100%;
+	margin: 0;
+}
+body {
+	height:100%;
+	background-image: url("homeBG.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	border: 1px solid transparent;
+	text-align: center;
+}
+#titleDiv {
+
+	margin:10px auto 0px auto;
+	height:100px;
+	padding: 0;
+	border-radius: 10px;
+	max-width:50%;
+	width: 50%;
+	overflow: hidden;
+}
+#titleH1 {
+
+	margin-bottom: 0px;
+	font-family: sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	color: #0B4C5F;
+	opacity: 0.9;
+}
+#subtitleP {
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #393939;
+	margin-top: 0px;
+	opacity: 0.9;
+
+}
+.list {
+	margin:10px auto 0px auto;
+	display: flex;
+	max-width:50%;
+	width: 50%;
+	overflow: hidden;
+	box-shadow: 0px 0px 3px 1px #838383;
+	border-radius: 10px;
+	background-color: rgba(11, 76, 95, .5);
+	transition: all 0.7s ease;
+}
+.list:hover {
+	background-color: rgba(11, 76, 95, .7);
+}
+.listTitle {
+	margin-left: 20px;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 22px;
+	opacity: .9;
+	color: #04B4AE;
+}
+.listImage{
+	width:75px;
+}
