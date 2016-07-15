@@ -14,27 +14,29 @@ body {
 #titleDiv {
 
 	margin:10px auto 0px auto;
-	height:100px;
+	height:90px;
 	padding: 0;
 	border-radius: 10px;
-	max-width:50%;
-	width: 50%;
+	max-width:35%;
+	width: 35%;
 	overflow: hidden;
+	background-color: rgba(54, 54, 54, 0.7);
 }
 #titleH1 {
 
 	margin-bottom: 0px;
+	margin-top: 10px;
 	font-family: sans-serif;
 	font-size: 36px;
 	font-weight: bold;
-	color: #0B4C5F;
+	color: #04B4AE;
 	opacity: 0.9;
 }
 #subtitleP {
 	font-family: sans-serif;
 	font-size: 18px;
 	font-weight: bold;
-	color: #393939;
+	color: rgba(175, 175, 175, 1);
 	margin-top: 0px;
 	opacity: 0.9;
 }
@@ -73,6 +75,7 @@ body {
 	font-weight: bolder;
 	font-size: 22px;
 	opacity: .9;
+	color: rgba(175, 175, 175, 1);
 }
 .listSubDiv {
 	background-color: rgba(54, 54, 54, 0.5);
