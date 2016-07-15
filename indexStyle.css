@@ -52,7 +52,7 @@ body {
 	padding-bottom: 0px;
 }
 .list:hover {
-	background-color: rgba(11, 76, 95, .7);
+	background-color: rgba(11, 76, 95, 0.9);
 }
 .listTitle {
 	margin-left: 20px;
