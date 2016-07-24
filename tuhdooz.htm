@@ -6,8 +6,13 @@
 	<link rel="StyleSheet" href="tuhdoozStyle.css" />
 </header>
 <body id="body01">
+	<div id="homeDiv" onclick="location.href='index.htm'">
+		<image id="backArrow" src="double_left_arrow.png" />
+		<p id="homeP">Back to home</p>
+	</div>
 	<div id="div_01">
-		<h1 id="a_01">tuhdooz</h1>
+		
+		<h1 id="h1_01">tuhdooz</h1>
 	</div>
 	<div id="div_02">
 		<div id="div_04">
@@ -16,11 +21,16 @@
 		</div>
 		<ul id="listItems"></ul>
 		<div id="div_03">
-			<p id="itemsLeft">0 items left</p>
-			<a id="btn_01" href="#btn_01">All</a>
-			<a id="btn_02" href="#btn_02">Active</a>
-			<a id="btn_03" href="#btn_03">Completed</a>
-			<a id="btn_04" href="#btn_04">Clear Completed</a>
+			<div id="div_05">
+				<p id="itemsLeft">0 items left</p>
+				<a id="btn_01" class="viewButtons" href="#btn_01">All</a>
+				<a id="btn_02" class="viewButtons" href="#btn_02">Active</a>
+				<a id="btn_03" class="viewButtons" href="#btn_03">Completed</a>
+				<a id="btn_04" class="viewButtons" href="#btn_04">Clear Completed</a>
+			</div>
+			<div id="div_06" class="stackDiv"></div>
+			<div id="div_07" class="stackDiv"></div>
+			<!--<div id="div_08" class="stackDiv"></div>-->
 		</div>
 	</div>
 </body>
@@ -340,7 +350,7 @@ function clickArrow ()
 	{
 		for (var j = 0; j < 15; j++)
 		{
-			for (var i = 0; i < counter; i++) 
+			for (var i = 0; i < unchecked.length; i++)
 			{
 	    		toggle(true, unchecked[i]);
 		  	}

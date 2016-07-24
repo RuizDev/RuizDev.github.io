@@ -1,8 +1,15 @@
-
-body {
-	background-color: aqua;
+html {
+	min-height: 100%;
+	min-width:100%;
 }
-#a_01 {
+body {
+	background: aqua;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100%;
+	min-width:100%;
+}
+#h1_01 {
 	font-size: 60px;
 	font-family: sans-serif;
 	font-weight: bolder;
@@ -10,12 +17,38 @@ body {
 	margin-bottom: 10px;
 	opacity: .9;
 	color: #04B4AE;
-	
 }
 
 #div_01 {
 	max-width: 232px;
 	margin: 0px auto 0px auto;
+}
+
+#homeDiv {
+	float: left;
+	background-color: rgba(54, 54, 54, 0.9);
+	margin: 0;
+	border-radius: 10px;
+	opacity: 0.5;
+	transition: all 1s ease;
+	cursor: pointer;
+	width: 130px;
+}
+
+#homeDiv:hover {
+	opacity: 0.9;
+}
+
+#backArrow {
+	width: 30px;
+	height: 30px;
+}
+
+#homeP {
+	text-decoration: none;
+	color: aqua;
+	float: right;
+	margin: 8px 10px 0px 0px;
 }
 
 #div_02 {
@@ -24,6 +57,16 @@ body {
 }
 
 #div_03{
+	
+}
+
+#div_04 {
+	width: 400px;
+	display: inline-flex;
+	align-items: center;
+}
+
+#div_05 {
 	display: inline-flex;
 	align-items: center;
 	width: 376px;
@@ -35,10 +78,24 @@ body {
 	border-radius: 1px;
 }
 
-#div_04 {
-	width: 400px;
-	display: inline-flex;
-	align-items: center;
+#div_06{
+	width: 395px;
+}
+
+#div_07{
+	width: 390px;
+}
+
+/*#div_08{
+	width: 360px;
+}*/
+
+.stackDiv {
+	border-top: 0.1px solid #c0c0c0;
+	background-color: white;
+	height: 2.75px;
+	margin: 0px auto 0px auto;
+	box-shadow: 0px 1px 3px #c0c0c0;
 }
 
 #dropdownArrow {
@@ -79,6 +136,8 @@ body {
 	border-left-width: 0px;
 	border-right-width: 0px;
 	border-color: #c0c0c0;
+	transition: all 1s ease;
+	overflow: hidden;
 }
 #listItems {
 	width: 400px;
@@ -91,6 +150,7 @@ body {
 	padding-bottom: 0px;
 	box-shadow: 0px -1px 5px #c0c0c0;
 	background-color: white;
+	transition: all 1s ease;
 }
 .unchecked {
 	height: 15px;
@@ -136,7 +196,7 @@ body {
 	transition: all 1s ease;
 }
 
-a {
+.viewButtons {
 	border: none;
 	background-color: white;
 	margin-left: 5px;
@@ -154,13 +214,13 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+.viewButtons:hover {
 	background-color: #99ffff;
 	border-radius: 10px;
 	opacity: 1;
 }
 
-a:onclick {
+.viewButtons:onclick {
 	background-color: #99ffff;
 	border-radius: 20px;
 	opacity: 1;

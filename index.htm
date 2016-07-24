@@ -1,40 +1,105 @@
 <!doctype html>
 <head>
-		<link rel="icon" href="tuhdoozIcon.PNG" />
+	<link rel="icon" href="tuhdoozIcon.PNG" />
 </head>
 <header>
 	<link rel="StyleSheet" href="indexStyle.css" />
 </header>
+<div id="titleDiv">
+	<h1 id="titleH1">Welcome to my humble abode...</h1>
+	<p id="subtitleP">Home of the one and only RuizDev</p>
+	<div id="tabsDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<div id="homeTab" class="tabs" onclick="switchPage('home')" draggable="true" ondragstart="drag(event)">
+			<p class="tabsP">Home</p>
+		</div>
+		<div id="projectsTab" class="tabs" onclick="switchPage('projects')" draggable="true" ondragstart="drag(event)">
+			<p class="tabsP">Projects</p>
+		</div>
+		<div id="aboutTab" class="tabs" onclick="switchPage('about')" draggable="true" ondragstart="drag(event)">
+			<p class="tabsP">About</p>
+		</div>
+	</div>
+</div>
 <body>
-	<div id="titleDiv">
-		<h1 id="titleH1">Welcome to my humble abode...</h1>
-		<p id="subtitleP">Home of the one and only RuizDev</p>
+	<div id="homePage" class="pages">
+		<h1>Home page stuff here</h1>
 	</div>
-	<div class="list" onclick="location.href='tuhdooz.htm'">
-		<div class="listDiv">
-			<image class="listImage" src="tuhdoozIcon.PNG" />
-			<p class="listTitle">tuhdooz</p>
+	<div id="projectsPage" class="pages">
+		<h1>Projects</h1>
+		<div class="list" onclick="location.href='tuhdooz.htm'">
+			<div class="listDiv">
+				<image class="listImage" src="tuhdoozIcon.PNG" />
+				<p class="listTitle">tuhdooz</p>
+			</div>
+				<div class="listSubDiv">
+				<p class="listSubtitle">An intuitive to-do list for all purposes!</p>
+			</div>
 		</div>
+		<div class="list" onclick="location.href='horrorGame.htm'">
+			<div class="listDiv">
+			<image class="listImage" id="skullIcon" src="skull_icon.png" />
+			<p class="listTitle">I'm Coming For You...</p>
+			</div>
 			<div class="listSubDiv">
-			<p class="listSubtitle">An intuitive to-do list for all purposes!</p>
+				<p class="listSubtitle">A horror game built in Unity by RuizDev</p>
+			</div>
+		</div>
+		<div class="list" onclick="location.href='http://samsite.simple1.biz'">
+			<div class="listDiv">
+				<image class="listImage" src="Sam'SiteIcon.PNG" />
+				<p class="listTitle">SamSite</p>
+			</div>
+				<div class="listSubDiv">
+				<p class="listSubtitle">A website I made in 2014</p>
+			</div>
 		</div>
 	</div>
-	<div class="list" onclick="location.href='horrorGame.htm'">
-		<div class="listDiv">
-		<image class="listImage" id="skullIcon" src="skull_icon.png" />
-		<p class="listTitle">I'm Coming For You...</p>
-		</div>
-		<div class="listSubDiv">
-			<p class="listSubtitle">A horror game built in Unity by RuizDev</p>
-		</div>
-	</div>
-	<div class="list" onclick="location.href='http://samsite.simple1.biz'">
-		<div class="listDiv">
-			<image class="listImage" src="Sam'SiteIcon.png" />
-			<p class="listTitle">SamSite</p>
-		</div>
-			<div class="listSubDiv">
-			<p class="listSubtitle">A website I made in 2014</p>
-		</div>
+	<div id="aboutPage" class="pages">
+		<h1>About the Developer stuff here</h1>
 	</div>
 </body>
+<script type="text/javascript">
+window.onload = function ()
+{
+	switchPage("home");
+}
+function switchPage(key)
+{
+	var page = document.getElementById(key + "Page");
+	var pages = document.getElementsByClassName("pages");
+	var tab = document.getElementById(key + "Tab");
+	var tabs = document.getElementsByClassName("tabs");
+
+	tab.style.backgroundColor = "rgba(135, 135, 135, 0.6)";
+	page.style.height = "";
+	page.style.opacity = "";
+	for (var i = 0; i < pages.length; i++)
+	{
+		if (pages[i].id != key + "Page")
+		{
+			pages[i].style.opacity = "0";
+			pages[i].style.height = "0px";
+		}
+	}
+	for (var i = 0; i < tabs.length; i++)
+	{
+		if (tabs[i].id != key + "Tab")
+		{
+			tabs[i].style.backgroundColor = "";
+		}
+	}
+}
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+}
+</script>

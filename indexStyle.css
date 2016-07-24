@@ -1,26 +1,33 @@
 html {
 	height:100%;
+	min-width: 1084px;
 	background-image: url("homeBG.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin: 0;
-	border: 1px solid transparent;
-	text-align: center;
-	display: block;
 }
 body {
-	
+	background-color: rgba(85, 85, 85, 0.6);
+	margin: 0;
+	text-align: center;
+	display: block;
+	transition: all 0.5s ease;
+	height:100%;
+}
+h1 {
+	font-family: sans-serif;
+	font-weight: bold;
 }
 #titleDiv {
 
-	margin:10px auto 0px auto;
-	height:90px;
+	margin: 0px;
+	height: auto;
 	padding: 0;
-	border-radius: 10px;
-	max-width:50%;
-	width: 50%;
+	max-width: 100%;
+	width: 100%;
 	overflow: hidden;
 	background-color: rgba(54, 54, 54, 0.7);
+	transition: all 0.5s ease;
+
 }
 #titleH1 {
 
@@ -38,7 +45,57 @@ body {
 	font-weight: bold;
 	color: rgba(175, 175, 175, 1);
 	margin-top: 0px;
+	margin-bottom: 0px;
 	opacity: 0.9;
+}
+#tabsDiv {
+	max-width: 100%;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 35px;
+	margin-top: 0px;
+	display: inline-flex;
+	transition: all 0.5s ease;
+}
+#projectsTab {
+	
+}
+.tabs {
+	height: 30px;
+	width: 100px;
+	background-color: rgba(135, 135, 135, 0.2);
+	margin-left: 20px;
+	margin-top: 0px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding-top: 8px;
+	transition: background-color 0.3s ease-in;
+	cursor: pointer;
+}
+.tabs:hover {
+	background-color: rgba(135, 135, 135, 0.7);
+	transition: background-color 0.3s ease-out;
+}
+.tabs:active {
+	background-color: rgba(135, 135, 135, 1);
+	transition: background-color 0.3s ease-out;
+}
+.tabsP {
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #04B4AE;
+	cursor: pointer;
+}
+#projectsPage {
+	
+}
+.pages {
+	transition: all 1s ease;
+	overflow: hidden;
 }
 .list {
 	margin:10px auto 0px auto;
