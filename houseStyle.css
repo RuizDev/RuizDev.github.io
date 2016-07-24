@@ -1,0 +1,212 @@
+html {
+	height:100%;
+	min-width: 1084px;
+	background-image: url("homeBG.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: sans-serif;
+}
+body {
+	margin: 0;
+	text-align: center;
+	align-content: center;
+	display: block;
+	height: 100%;
+}
+#bodyDiv {
+	background-color: rgba(0, 0, 0, 0.31);
+	height: auto;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: 46px;
+}
+h1 {
+	font-family: sans-serif;
+	font-weight: bold;
+	color: white;
+	margin-top: 10px;
+}
+p {
+	height: auto;
+}
+#titleDiv {
+
+	margin: 0px;
+	height: auto;
+	padding: 0;
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(54, 54, 54, 0.6);
+	transition: all 0.5s ease;
+}
+#titleH1 {
+	clear: left;
+	margin-bottom: 0px;
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	color: #04B4AE;
+	opacity: 0.9;
+}
+#subtitleP {
+	font-family: sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	opacity: 0.9;
+	clear: left;
+
+}
+#tabsDiv {
+	position: absolute;
+	padding-top: 8px;
+	max-width: 100%;
+	width: 100%;
+	margin: 0;
+	height: auto;
+	display: inline-flex;
+	float: left;
+	background-color: rgba(54, 54, 54, 0.6);
+	left: 0;
+	top: 80px;
+}
+.tabs {
+	height: 30px;
+	width: 100px;
+	background-color: rgba(135, 135, 135, 0.2);
+	margin-left: 20px;
+	margin-top: 0px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding-top: 8px;
+	transition: background-color 0.3s ease-in;
+	cursor: pointer;
+}
+.tabs:hover {
+	background-color: rgba(135, 135, 135, 0.7);
+	transition: background-color 0.3s ease-out;
+}
+.tabs:active {
+	background-color: rgba(135, 135, 135, 1);
+	transition: background-color 0.3s ease-out;
+}
+.tabsP {
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: white;
+	cursor: pointer;
+}
+.pages {
+	transition: all 1s ease;
+	overflow: hidden;
+}
+#homeDiv1 {
+	width: 1050px;
+	height: auto;
+	display: inline-flex;
+	align-self: center;
+	margin-top: 30px;
+}
+.image {
+    position:relative;
+    width:500px;
+    height:275px;
+}
+.image img {
+    width:100%;
+    vertical-align:top;
+}
+.image:after, .image:before {
+    position:absolute;
+    opacity:0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+.image:after {
+    content:'\A';
+    width:100%; height:100%;
+    top:0; left:0;
+    background:rgba(0,0,0,0);
+}
+.image:before {
+    content: attr(data-content);
+    width:100%;
+    color:white;
+    z-index:1;
+    bottom:0;
+    padding:4px 10px;
+    text-align:center;
+    background:rgba(54, 54, 54, 0.6);
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+}
+.image:hover:after, .image:hover:before {
+    opacity:1;
+}
+#homeDiv2 {
+	margin-left: 30px;
+	width: 550px;
+	height: 500px;
+	display: block;
+	text-align: left;
+	color: white;
+}
+#homeP1 {
+	font-size: 28px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+#homeP2 {
+	margin-top: 4px;
+}
+#homeP3 {
+	font-size: 20px;
+	width: auto;
+}
+#galDiv01 {
+	margin: 0;
+	display: inline-flex;
+	width: 1020px;
+	height: auto;
+	align-self: center;
+	padding: 6px;
+}
+.galImagesLand {
+	width: 332px;
+  	height: auto;
+}
+.galImagesPort {
+	width: auto;
+  	height: 332px;
+}
+.galColumn {
+	width:  332px;
+  	height: auto;
+  	padding: 6px;
+}
+.galCell {
+	width:332px;
+  	height:332px;
+  	overflow: hidden;
+  	cursor: pointer;
+  	border: 1.5px solid rgba(135, 135, 135, 0.7);
+  	margin-bottom: 10px;
+  	margin-top: 10px;
+  	transition: all 0.8s ease;
+  	display: flex;
+  	justify-content:center;
+  	align-items:center;
+  	
+  }
+.galCell:hover {
+	background-color: rgba(135, 135, 135, 0.7);
+}

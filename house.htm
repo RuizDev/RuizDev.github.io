@@ -1,0 +1,199 @@
+<!doctype html>
+<head>
+	<link rel="icon" href="tuhdoozIcon.PNG" />
+</head>
+<header>
+	<link rel="StyleSheet" href="indexStyle.css" />
+</header>
+<body onscroll="dockTabs()">
+<div id="titleDiv">
+	<h1 id="titleH1">House For Sale By Owner</h1>
+	<p id="subtitleP">377 West 120 South Lindon, Utah 84042</p>
+	
+</div>
+<div id="tabsDiv" >
+	<div id="homeTab" class="tabs" onclick="switchPage('home')" draggable="true" ondragstart="drag(event)">
+		<p class="tabsP">Home</p>
+	</div>
+	<div id="galleryTab" class="tabs" onclick="switchPage('gallery')" draggable="true" ondragstart="drag(event)">
+		<p class="tabsP">Gallery</p>
+	</div>
+	<!--<div id="aboutTab" class="tabs" onclick="switchPage('about')" draggable="true" ondragstart="drag(event)">
+		<p class="tabsP">About</p>
+	</div>-->
+</div>
+<div id="bodyDiv">
+	<div id="homePage" class="pages">
+		<div id="homeDiv1">
+			<div id="displayImg" class="image" data-content="Veiw more" onclick="switchPage('gallery')">
+				<img src="house1.jpg" />
+			</div>
+			<div id="homeDiv2">
+				<p id="homeP1">$480,000</p>
+				<p id="homeP2">Single Family Home by owner</p>
+				<p id="homeP3">This Home sits on 1/2 acre near the base of the Timpanogos Mountains, and is a gardeners/ animal lovers dream! 3200 sq ft. open floor plan, w/ finished basement. 6 bd + Office. Moldings throughout. 1500 Sq ft. Metal Horse barn w/ 3 stalls +tack room. Established flower/ vegetable gardens w/ mature plants like Raspberries, Strawberries, 10 mature fruit trees. 12 x 12 sturdy Greenhouse, tons of concrete, basement apt. ready w/ Full kitchen. Fiber Optic Internet on Utopia.</p>
+			</div>
+		</div>
+	</div>
+	<div id="galleryPage" class="pages">
+		<h1>Gallery</h1>
+		<div id="galDiv01">
+			
+		</div>
+	</div>
+</div>
+<div id="displayImagesDiv"
+</body>
+<script type="text/javascript">
+window.onscroll = function()
+{
+	dockTabs();
+}
+window.onload = function ()
+{
+	switchPage("home");
+	loadImages();
+}
+function loadImages()
+{
+	var destination = document.getElementById("galDiv01");
+	var perCol = 10
+	for (var i = 0; i < 3; i++)
+	{
+		var div1 = document.createElement("div");
+		div1.setAttribute("class", "galColumn");
+		destination.appendChild(div1);
+		if (i === 2 || i === 1)
+		{
+			perCol = 9;
+		}
+
+		for (var j = 0; j < perCol; j++)
+		{
+			var div2 = document.createElement("div");
+			div2.setAttribute("class", "galCell");
+			div1.appendChild(div2);
+		}
+		perCol = 10;
+	}
+	var galCells = document.getElementsByClassName("galCell");
+	for (var i = 0; i < galCells.length; i++)
+	{
+		galCells[i].setAttribute("id", "galCell" + i);
+		galCells[i].setAttribute("onclick", "enlargeImage(" + i + ")");
+	}
+	for (var i = 1; i < 29; i++)
+	{
+		var image = document.createElement("img");
+		if (i === 2 || (i >= 12 && i <= 16))
+		{
+			image.setAttribute("class", "galImagesPort");
+		}
+		else
+		{
+			image.setAttribute("class", "galImagesLand");
+		}
+		image.setAttribute("src", "house" + i + ".jpg");
+		galCells[i - 1].appendChild(image);
+	}
+	
+}
+function switchPage(key)
+{
+	var page = document.getElementById(key + "Page");
+	var pages = document.getElementsByClassName("pages");
+	var tab = document.getElementById(key + "Tab");
+	var tabs = document.getElementsByClassName("tabs");
+
+	tab.style.backgroundColor = "rgba(175, 175, 175, 0.4)";
+	page.style.height = "";
+	page.style.opacity = "";
+	for (var i = 0; i < pages.length; i++)
+	{
+		if (pages[i].id != key + "Page")
+		{
+			pages[i].style.opacity = "0";
+			pages[i].style.height = "0px";
+		}
+	}
+	for (var i = 0; i < tabs.length; i++)
+	{
+		if (tabs[i].id != key + "Tab")
+		{
+			tabs[i].style.backgroundColor = "";
+		}
+	}
+	window.scrollTo(0, 0);
+}
+var tabs = document.getElementById("tabsDiv");
+var title = document.getElementById("titleDiv");
+function dockTabs () 
+{
+	//console.log(title.getBoundingClientRect().top);
+	if (title.getBoundingClientRect().top < -84)
+	{
+		tabs.style.position = "fixed";
+		tabs.style.top = "0";
+		tabs.style.marginTop = "";
+	}
+	else
+	{
+		tabs.style.position = "";
+		tabs.style.top = "";
+	}
+}
+
+function enlargeImage(num)
+{
+	
+	var thisDiv = document.getElementById("galCell" + num);
+	var thisImage = thisDiv.getElementsByClassName("galImagesLand")[0];
+	
+	if (thisDiv.style.position != "fixed")
+	{
+		thisDiv.style.transition = "none";
+		thisDiv.style.position = "fixed";
+		thisDiv.style.width = "100%";
+		thisDiv.style.height = "100%";
+		thisDiv.style.top = "0";
+		thisDiv.style.left = "0";
+		thisDiv.style.backgroundColor = "rgba(135, 135, 135, 0.7)";
+		thisDiv.style.margin = "0";
+		thisDiv.parentNode.style.width = "100%";
+		if (thisImage != null)
+		{
+			thisImage.style.maxWidth = "85%";
+			thisImage.style.width = "85%";
+		}
+		if (thisDiv.getElementsByClassName("galImagesPort")[0] != null)
+		{
+			thisImage.style.maxHeight = "85%";
+			thisImage.style.height = "85%";
+		}
+	}
+	else
+	{
+		
+		thisDiv.style.position = "";
+		thisDiv.style.width = "";
+		thisDiv.style.height = "";
+		thisDiv.style.top = "";
+		thisDiv.style.left = "";
+		thisDiv.style.backgroundColor = "";
+		thisDiv.style.margin = "";
+		thisDiv.parentNode.style.width = "";
+		if (thisDiv.getElementsByClassName("galImagesLand")[0] != null)
+		{
+			thisDiv.getElementsByClassName("galImagesLand")[0].style.maxWidth = "";
+			thisDiv.getElementsByClassName("galImagesLand")[0].style.width = "";
+		}
+		if (thisDiv.getElementsByClassName("galImagesPort")[0] != null)
+		{
+			thisDiv.getElementsByClassName("galImagesPort")[0].style.maxHeight = "";
+			thisDiv.getElementsByClassName("galImagesPort")[0].style.height = "";
+		}
+		thisDiv.style.transition = "";
+	}
+	
+}
+</script>
