@@ -1,21 +1,23 @@
 <!doctype html>
 <head>
-	<link rel="icon" href="tuhdoozIcon.PNG" />
+	<link rel="icon" href="" />
 </head>
 <header>
 	<link rel="StyleSheet" href="houseStyle.css" />
 </header>
+
 <body onscroll="dockTabs()">
+
 <div id="titleDiv">
 	<h1 id="titleH1">House For Sale By Owner</h1>
 	<p id="subtitleP">377 West 120 South Lindon, Utah 84042</p>
 	
 </div>
 <div id="tabsDiv" >
-	<div id="homeTab" class="tabs" onclick="switchPage('home')" draggable="true" ondragstart="drag(event)">
+	<div id="homeTab" class="tabs" onclick="switchPage('home')">
 		<p class="tabsP">Home</p>
 	</div>
-	<div id="galleryTab" class="tabs" onclick="switchPage('gallery')" draggable="true" ondragstart="drag(event)">
+	<div id="galleryTab" class="tabs" onclick="switchPage('gallery')">
 		<p class="tabsP">Gallery</p>
 	</div>
 	<!--<div id="aboutTab" class="tabs" onclick="switchPage('about')" draggable="true" ondragstart="drag(event)">
@@ -23,9 +25,10 @@
 	</div>-->
 </div>
 <div id="bodyDiv">
+
 	<div id="homePage" class="pages">
 		<div id="homeDiv1">
-			<div id="displayImg" class="image" data-content="Veiw more" onclick="switchPage('gallery')">
+			<div id="homeImg" class="image" data-content="Veiw more" onclick="enlargeImage(0)">
 				<img src="house1.jpg" />
 			</div>
 			<div id="homeDiv2">
@@ -38,11 +41,21 @@
 	<div id="galleryPage" class="pages">
 		<h1>Gallery</h1>
 		<div id="galDiv01">
-			
 		</div>
 	</div>
 </div>
-<div id="displayImagesDiv"
+<div id="display" onresize="resizeDisImage()">
+	<div>
+		<img id="displayImg" src="">
+		<input id="closeDisplay" type="image" src="xIcon.png" onclick="closeDisplay()">
+	</div>
+	<div id="lArrowDiv" class="arrowDiv" onclick="nextPrevImg('l')">
+		<img class="arrows" src="arrow-left.png">
+	</div>
+	<div id="rArrowDiv" class="arrowDiv" onclick="nextPrevImg('r')">
+		<img class="arrows" src="arrow-right.png">
+	</div>
+</div>
 </body>
 <script type="text/javascript">
 window.onscroll = function()
@@ -54,10 +67,58 @@ window.onload = function ()
 	switchPage("home");
 	loadImages();
 }
+window.onresize = function () 
+{
+	var displayImg = document.getElementById("displayImg");
+	if (window.innerWidth < 1150)
+	{
+		var path = displayImg.getAttribute("src");
+		for (var i = 0; i < 28; i++)
+		{
+			if (path === housePics[i])
+			{
+				if (checkPort(i))
+				{
+					displayPort(displayImg);
+				}
+				else
+				{
+					displayLandSmall(displayImg);
+				}
+			}
+		}
+	}
+	else
+	{
+		var path = displayImg.getAttribute("src");
+		for (var i = 0; i < 28; i++)
+		{
+			if (path === housePics[i])
+			{
+				if (checkPort(i))
+				{
+					displayPort(displayImg);
+				}
+				else
+				{
+					displayLand(displayImg);
+				}
+			}
+		}
+	}
+}
+var housePics = new Array;
+
+
 function loadImages()
 {
+
 	var destination = document.getElementById("galDiv01");
-	var perCol = 10
+	var perCol = 10;
+	for(var i = 1; i < 29; i++)
+	{
+		housePics.push("house" + i + ".jpg");
+	}
 	for (var i = 0; i < 3; i++)
 	{
 		var div1 = document.createElement("div");
@@ -82,10 +143,10 @@ function loadImages()
 		galCells[i].setAttribute("id", "galCell" + i);
 		galCells[i].setAttribute("onclick", "enlargeImage(" + i + ")");
 	}
-	for (var i = 1; i < 29; i++)
+	for (var i = 0; i < 28; i++)
 	{
 		var image = document.createElement("img");
-		if (i === 2 || (i >= 12 && i <= 16))
+		if (checkPort(i))
 		{
 			image.setAttribute("class", "galImagesPort");
 		}
@@ -93,8 +154,8 @@ function loadImages()
 		{
 			image.setAttribute("class", "galImagesLand");
 		}
-		image.setAttribute("src", "house" + i + ".jpg");
-		galCells[i - 1].appendChild(image);
+		image.setAttribute("src", housePics[i]);
+		galCells[i].appendChild(image);
 	}
 	
 }
@@ -129,7 +190,6 @@ var tabs = document.getElementById("tabsDiv");
 var title = document.getElementById("titleDiv");
 function dockTabs () 
 {
-	//console.log(title.getBoundingClientRect().top);
 	if (title.getBoundingClientRect().top < -84)
 	{
 		tabs.style.position = "fixed";
@@ -145,55 +205,140 @@ function dockTabs ()
 
 function enlargeImage(num)
 {
-	
+	var homePage = document.getElementById("homePage");
+	if (homePage.style.opacity === "")
+	{
+		switchPage("gallery");
+	}
+	var display = document.getElementById("display");
+	var displayImg = document.getElementById("displayImg");
 	var thisDiv = document.getElementById("galCell" + num);
-	var thisImage = thisDiv.getElementsByClassName("galImagesLand")[0];
-	
-	if (thisDiv.style.position != "fixed")
+	var thisImageLand = thisDiv.getElementsByClassName("galImagesLand")[0];
+	var thisImagePort = thisDiv.getElementsByClassName("galImagesPort")[0];
+
+	display.style.opacity = "1";
+	display.style.zIndex = "2";
+	if (thisImageLand)
 	{
-		thisDiv.style.transition = "none";
-		thisDiv.style.position = "fixed";
-		thisDiv.style.width = "100%";
-		thisDiv.style.height = "100%";
-		thisDiv.style.top = "0";
-		thisDiv.style.left = "0";
-		thisDiv.style.backgroundColor = "rgba(135, 135, 135, 0.7)";
-		thisDiv.style.margin = "0";
-		thisDiv.parentNode.style.width = "100%";
-		if (thisImage != null)
+		displayImg.style.width = "";
+		displayImg.style.height = "";
+		displayImg.style.left = "";
+		displayImg.style.top = "";
+		displayImg.setAttribute("src", thisImageLand.getAttribute("src"));
+	}
+	if (thisImagePort)
+	{
+		displayImg.style.width = "auto";
+		displayImg.style.height = "90%";
+		displayImg.style.left = "38%";
+		displayImg.style.top = "5%";
+		displayImg.setAttribute("src", thisImagePort.getAttribute("src"));
+	}
+}
+function nextPrevImg(direction)
+{
+	var displayImg = document.getElementById("displayImg");
+
+	if (direction === "r")
+	{
+		var path = displayImg.getAttribute("src");
+		for (var i = 0; i < housePics.length; i++)
 		{
-			thisImage.style.maxWidth = "85%";
-			thisImage.style.width = "85%";
-		}
-		if (thisDiv.getElementsByClassName("galImagesPort")[0] != null)
-		{
-			thisImage.style.maxHeight = "85%";
-			thisImage.style.height = "85%";
+			if (path === housePics[i])
+			{
+				if (path === housePics[housePics.length - 1])
+				{
+					if (checkPort(i + 1))
+					{
+						displayPort(displayImg);
+					}
+					else
+					{
+						displayLand(displayImg);
+					}
+					displayImg.setAttribute("src", housePics[0]);
+
+				}
+				else
+				{
+					if (checkPort(i + 1))
+					{
+						displayPort(displayImg);
+					}
+					else
+					{
+						displayLand(displayImg);
+					}
+					displayImg.setAttribute("src", housePics[i + 1]);
+				}
+			}
 		}
 	}
-	else
+	if (direction === "l")
 	{
-		
-		thisDiv.style.position = "";
-		thisDiv.style.width = "";
-		thisDiv.style.height = "";
-		thisDiv.style.top = "";
-		thisDiv.style.left = "";
-		thisDiv.style.backgroundColor = "";
-		thisDiv.style.margin = "";
-		thisDiv.parentNode.style.width = "";
-		if (thisDiv.getElementsByClassName("galImagesLand")[0] != null)
+		var path = displayImg.getAttribute("src");
+		for (var i = 0; i < 28; i++)
 		{
-			thisDiv.getElementsByClassName("galImagesLand")[0].style.maxWidth = "";
-			thisDiv.getElementsByClassName("galImagesLand")[0].style.width = "";
+			if (path === housePics[i])
+			{
+				if (path === housePics[0])
+				{
+					if (checkPort(housePics.length - 1))
+					{
+						displayPort(displayImg);
+					}
+					else
+					{
+						displayLand(displayImg);
+					}
+					displayImg.setAttribute("src", housePics[housePics.length - 1]);
+				}
+				else
+				{
+					if (checkPort(i - 1))
+					{
+						displayPort(displayImg);
+					}
+					else
+					{
+						displayLand(displayImg);
+					}
+					displayImg.setAttribute("src", housePics[i - 1]);
+				}
+			}
 		}
-		if (thisDiv.getElementsByClassName("galImagesPort")[0] != null)
-		{
-			thisDiv.getElementsByClassName("galImagesPort")[0].style.maxHeight = "";
-			thisDiv.getElementsByClassName("galImagesPort")[0].style.height = "";
-		}
-		thisDiv.style.transition = "";
 	}
-	
+}
+function closeDisplay () 
+{
+	var display = document.getElementById("display");
+	display.style.opacity = "";
+	display.style.zIndex = "";
+}
+function checkPort (i)
+{
+	return i === 1 || (i >= 11 && i <= 15);
+}
+function displayPort (image)
+{
+	image.style.width = "auto";
+	image.style.height = "90%";
+	image.style.left = "38%";
+	image.style.top = "5%";
+}
+function displayLand (image)
+{
+	image.style.width = "";
+	image.style.height = "";
+	image.style.left = "";
+	image.style.top = "";
+}
+function displayLandSmall (image)
+{
+	image.style.width = "auto";
+	image.style.height = "65%";
+	image.style.left = "11%";
+	image.style.top = "10%";
 }
 </script>
+</html>
