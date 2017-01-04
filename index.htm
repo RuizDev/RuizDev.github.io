@@ -1,0 +1,106 @@
+<!doctype html>
+<head>
+	<link rel="icon" href="tuhdoozIcon.PNG" />
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+</head>
+<header>
+	<link rel="StyleSheet" href="indexStyle.css" />
+</header>
+<div id="titleDiv">
+	<h1 id="titleH1">The Roman Republic</h1>
+	<p id="subtitleP">A Pawn Star Project by Sam Ruiz</p>
+	<div id="tabsDiv">
+		<div id="homeTab" class="tabs" onclick="window.location.href='#homePage'">
+			<p class="tabsP">The Beginning</p>
+		</div>
+		<!-- <div id="projectsTab" class="tabs" onclick="window.location.href='#projectsPage'">
+			<p class="tabsP">Projects</p>
+		</div>
+		<div id="aboutTab" class="tabs" onclick="window.location.href='#aboutPage'">
+			<p class="tabsP">About</p>
+		</div> -->
+	</div>
+</div>
+<body>
+	<div class="spacer"></div>
+	<div id="homePage" class="pages">
+		<h1 id="homeH1" class="pageTitle">The Beginning</h1>
+		<div id="homeBody" class="pageBody">
+		<img src="She-wolf_suckles_Romulus_and_Remus.jpg">
+			<p id="beginningP" class="pageP">The beginning of the Roman Republic started with the legend of the two brothers Romulus and Remus; two demigod brothers abandoned at birth by the Tiber River. When they became adults they decided to build a city, but they couldn't get along. Romulus killed Remus and thus began Rome&#46; </p>
+			<img class="img" src="justice.jpg">
+			<p class="pageP">In the beginning Rome was a success! Rome quickly became a powerful empire. And the reason for such a success: the Traditional morals and values of Rome; it was an unwritten set of laws that every Roman knew and folowed. 
+			Fides. The Latin word fides encompasses several English value-words such as trust/trustworthiness, good faith/faithfulness, confidence, reliability, and credibility. It was an important concept in Roman law, as oral contracts were common. The concept of fides was personified by the goddess Fides, whose role in the mos maiorum is indicated by the antiquity of her cult. Her temple is dated from around 254 BC and was located on the Capitoline Hill in Rome, near the Temple of Jupiter.
+Pietas. The Roman attitude of dutiful respect towards the gods, homeland, parents and family was expressed by the word pietas, which required the maintenance of relationships in a moral and dutiful manner. Cicero defined pietas as "justice towards the gods.” It went beyond sacrifice and correct ritual performance to inner devotion and righteousness of the individual, and was the cardinal virtue of the Roman hero Aeneas in Vergil's Aeneid. The use of the adjectival form Pius as a cognomen reflects its importance as an identifying trait. Like Fides, Pietas was cultivated as a goddess, with a temple vowed to her in 191 BC and dedicated ten years later.
+Religio and Cultus. Related to the Latin verb religare, “to bind”, religio is the bond between gods and mortals, as carried out in traditional religious practices for preserving the pax deorum (“peace of the gods”). Cultus was the active observance and correct performance of rituals. Religious practice in this sense is to be distinguished from pietas and its inherent morality. See Religion in ancient Rome and Imperial cult (ancient Rome).
+Disciplina. The military character of Roman society suggests the importance of disciplina as related to education, training, discipline and self-control.
+Gravitas and Constantia. Gravitas was dignified self-control. Constantia was steadiness or perseverance. In the face of adversity, a “good” Roman was to display an unperturbed façade. Roman myth and history reinforced this value by recounting tales of figures such as Gaius Mucius Scaevola, who in a founding legend of the Republic demonstrated his seriousness and determination to the Etruscan king Lars Porsenna by holding his right hand in a fire.
+Virtus. Derived from the Latin word vir (“man”), virtus constituted the ideal of the true Roman male. Lucilius discusses virtus in some of his work, saying that it is virtus for a man to know what is good, evil, useless, shameful, or dishonorable.
+Dignitas and auctoritas. Dignitas and auctoritas were the end result of displaying the values of the ideal Roman and the service of the state in the forms of priesthoods, military positions, and magistracies. Dignitas was reputation for worth, honour and esteem. Thus, a Roman who displayed their gravitas, constantia, fides, pietas and other values becoming a Roman would possess dignitas among their peers. Similarly, through this path, a Roman could earn auctoritas (“prestige and respect”).
+</p>
+		</div>
+	</div>
+	 <div class="spacer"></div>
+	<!--<div id="projectsPage" class="pages">
+		<h1 class="pageTitle">Projects</h1>
+		<div id="projectsBody" class="pageBody">
+			
+		</div>
+	</div>
+	<div class="spacer"></div>
+	<div id="aboutPage" class="pages">
+		<h1 class="pageTitle">About the Developer stuff here</h1>
+		<div id="aboutBody" class="pageBody">
+			
+		</div>
+	</div> -->
+</body>
+<script type="text/javascript">
+window.onload = function ()
+{
+	// var pages = document.getElementsByClassName("pageBody");
+	// for (var i = 0; i < pages.length; i++)
+	// {
+	// 	LoadStuff(pages[i].id);
+	// }
+}
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 800) {
+        $("#titleDiv").addClass("active");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $("#titleDiv").removeClass("active");
+    }
+
+    if($(window).scrollTop() > 1400) {
+    	document.getElementsByTagName("html")[0].setAttribute("class", "bg1");
+    } else {
+    	document.getElementsByTagName("html")[0].setAttribute("class", "");
+    }
+
+    // if($(window).scrollTop() > 3800 && $(window).scrollTop() < 6800) {
+    // 	document.getElementsByTagName("html")[0].setAttribute("class", "bg2");
+    // } else {
+    // 	document.getElementsByTagName("html")[0].setAttribute("class", "");
+    // }
+});
+function LoadStuff (location)
+{
+	var page = document.getElementById(location);
+	for (var i = 0; i < 50; i++)
+	{
+		var p = document.createElement("p");
+		p.innerHTML = "Stuff";
+		p.setAttribute("class", "pageP");
+		page.appendChild(p);
+	}
+}
+</script>

@@ -1,0 +1,243 @@
+html {
+	height:100%;
+	min-width: 1084px;
+	background-image: url("spqr.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	transition: all 0.5s ease;
+}
+body {
+	/*background-color: rgba(85, 85, 85, 0.6);*/
+	margin: 0;
+	text-align: center;
+	display: block;
+	transition: all 0.5s ease;
+	height:100%;
+}
+h1 {
+	font-family: sans-serif;
+	font-weight: bold;
+}
+#titleDiv {
+
+	margin: 0px;
+	height: auto;
+	position: fixed;
+	padding: 0;
+	max-width: 100%;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0);
+	transition: all 0.5s ease;
+	z-index: 3;
+}
+.active {
+	background-color: rgba(68, 0, 0, 0.8) !important;
+	transition: all, 0.5, ease;
+	box-shadow: 3px 3px 5px rgba(10, 10, 10, 0.8);
+	/*top: -72px;*/
+}
+#titleH1 {
+
+	margin-bottom: 0px;
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	color: #FEFABF;
+	opacity: 0.9;
+}
+#subtitleP {
+	font-family: sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #D5A86F;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	opacity: 0.9;
+}
+#tabsDiv {
+	max-width: 100%;
+	width: 100%;
+	margin-left: 0px;
+	margin-right: 0px;
+	height: 35px;
+	margin-top: 0px;
+	display: inline-flex;
+	transition: all 0.5s ease;
+}
+#projectsTab {
+	
+}
+.tabs {
+	height: 30px;
+	width: auto;
+	background-color: rgba(70, 0, 3, 0);
+	margin-left: 20px;
+	margin-top: 0px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	padding-top: 8px;
+	transition: background-color 0.3s ease-in;
+	cursor: pointer;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.tabs:hover {
+	background-color: rgba(135, 135, 135, 0.2);
+	transition: background-color 0.3s ease-out;
+}
+.tabs:active {
+	background-color: rgba(135, 135, 135, 0.7);
+	transition: background-color 0.3s ease-out;
+}
+.tabsP {
+	font-size: 18px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	color: #FEFABF;
+	cursor: pointer;
+}
+#homeH1 {
+	/*margin-top: 120px;*/
+}
+#projectsPage {
+	
+}
+.pages {
+	transition: all 1s ease;
+	overflow: visible;
+	background-color: #440000;
+	padding-top: -20px;
+	padding-bottom: 60px;
+	width: 100%;
+	box-shadow: 3px 3px 5px rgba(10, 10, 10, 0.9);
+	
+}
+.pageBody {
+	width: 90%;
+	height: auto;
+	background-color: white;
+	margin-left: 5%;
+	margin-top: 0;
+	border-radius: 10px;
+	box-shadow: -3px -3px 5px rgba(10, 10, 10, 0.9);
+	text-align: center;
+	padding: 25px;
+}
+.pageTitle {
+	color: #F5DA98;
+	padding-top: 40px;
+	padding-bottom: 15px;
+	margin-bottom: 0;
+	background-color: #440000;
+	width: 100%;
+	box-shadow: 0px -3px 5px rgba(10, 10, 10, 0.9);
+}
+.img {
+	width: 700px;
+	height: auto;
+}
+
+.spacer {
+	height: 950px;
+	background: transparent;
+}
+.pageP {
+	margin-top: 10px;
+	font-family: sans-serif;
+	font-size: 28px;
+	text-align: left;
+}
+
+#content {
+	font-size: 36px;
+	opacity: 1;
+}
+#col1 {
+	background-color: rgba(250, 250, 250, 1);
+	z-index: 2;
+	position: absolute;
+	top: 450px;
+	box-shadow: 0px 0px 20px #191919;
+	border-radius: 7px;
+	padding: 60px;
+}
+.noBG {
+	background: none;
+}
+.otherBG {
+	position: absolute;
+	top: 0px;
+	height: 0px;
+	background-image: url("spqr.jpg");
+	/*background-color: #FFF056;*/
+	z-index: 1;
+}
+.bg1 {
+	background-image: url("council.jpg") !important;
+	transition: all 0.5s ease;
+}
+.bg2 {
+	background-image: url("army.jpg") !important;
+	transition: all 0.5s ease;
+}
+
+
+
+
+
+/*.list {
+	margin:10px auto 0px auto;
+	display: block;
+	max-width:75%;
+	width: 75%;
+	overflow: hidden;
+	box-shadow: 0px 0px 3px 1px #838383;
+	border-radius: 10px;
+	background-color: rgba(11, 76, 95, .5);
+	transition: all 0.7s ease;
+	cursor: pointer;
+	padding-bottom: 0px;
+}
+.list:hover {
+	background-color: rgba(11, 76, 95, 0.9);
+}
+.listTitle {
+	margin-left: 20px;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 22px;
+	opacity: .9;
+	color: #04B4AE;
+}
+.listImage{
+	width:70px;
+	height: 70px;
+}
+.listSubtitle {
+	margin-left: 20px;
+	margin-right: 25px;
+	font-family: sans-serif;
+	font-weight: bolder;
+	font-size: 22px;
+	opacity: .9;
+	color: rgba(175, 175, 175, 1);
+}
+.listSubDiv {
+	background-color: rgba(54, 54, 54, 0.5);
+	border-radius: 10px;
+	margin-left: 10px;
+	margin-bottom: 0px;
+	display: inline-flex;
+	float: right;
+}
+.listDiv {
+	border-radius: 10px;
+	margin-left: 0px;
+	display:inline-flex;
+	float: left;
+}*/
