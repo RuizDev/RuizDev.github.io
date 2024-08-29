@@ -1,7 +1,7 @@
 html {
 	height:100%;
 	min-width: 1084px;
-	background-image: url("homeBG.jpg");
+	background-image: url("assets/homeBG.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;

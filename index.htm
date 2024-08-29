@@ -6,8 +6,7 @@
 	<link rel="StyleSheet" href="indexStyle.css" />
 </header>
 <div id="titleDiv">
-	<h1 id="titleH1">Welcome to my humble abode...</h1>
-	<p id="subtitleP">Home of the one and only RuizDev</p>
+	<h1 id="titleH1">sam ruiz</h1>
 	<div id="tabsDiv" ondrop="drop(event)" ondragover="allowDrop(event)">
 		<div id="homeTab" class="tabs" onclick="switchPage('home')" draggable="true" ondragstart="drag(event)">
 			<p class="tabsP">Home</p>
@@ -15,9 +14,9 @@
 		<div id="projectsTab" class="tabs" onclick="switchPage('projects')" draggable="true" ondragstart="drag(event)">
 			<p class="tabsP">Projects</p>
 		</div>
-		<div id="aboutTab" class="tabs" onclick="switchPage('about')" draggable="true" ondragstart="drag(event)">
+		<!-- <div id="aboutTab" class="tabs" onclick="switchPage('about')" draggable="true" ondragstart="drag(event)">
 			<p class="tabsP">About</p>
-		</div>
+		</div> -->
 	</div>
 </div>
 <body>
@@ -28,7 +27,7 @@
 		<h1>Projects</h1>
 		<div class="list" onclick="location.href='tuhdooz.htm'">
 			<div class="listDiv">
-				<image class="listImage" src="tuhdoozIcon.PNG" />
+				<image class="listImage" src="assets/tuhdoozIcon.PNG" />
 				<p class="listTitle">tuhdooz</p>
 			</div>
 				<div class="listSubDiv">
@@ -37,7 +36,7 @@
 		</div>
 		<div class="list" onclick="location.href='horrorGame.htm'">
 			<div class="listDiv">
-			<image class="listImage" id="skullIcon" src="skull_icon.png" />
+			<image class="listImage" id="skullIcon" src="assets/skull_icon.png" />
 			<p class="listTitle">I'm Coming For You...</p>
 			</div>
 			<div class="listSubDiv">
@@ -46,7 +45,7 @@
 		</div>
 		<div class="list" onclick="location.href='http://samsite.simple1.biz'">
 			<div class="listDiv">
-				<image class="listImage" src="Sam'SiteIcon.png" />
+				<image class="listImage" src="assets/Sam'SiteIcon.png" />
 				<p class="listTitle">SamSite</p>
 			</div>
 				<div class="listSubDiv">
@@ -63,9 +62,9 @@
 			</div>
 		</div>
 	</div>
-	<div id="aboutPage" class="pages">
+	<!-- <div id="aboutPage" class="pages">
 		<h1>About the Developer stuff here</h1>
-	</div>
+	</div> -->
 </body>
 <script type="text/javascript">
 window.onload = function ()
@@ -78,8 +77,12 @@ function switchPage(key)
 	var pages = document.getElementsByClassName("pages");
 	var tab = document.getElementById(key + "Tab");
 	var tabs = document.getElementsByClassName("tabs");
+	let tabStyles = window.getComputedStyle(tabs[0]);
 
-	tab.style.backgroundColor = "rgba(135, 135, 135, 0.6)";
+
+	tab.style.backgroundColor = tabStyles.backgroundColor;// "#F0A57F";
+	// tab.style.color = "#272838";
+	tab.style.color = tabStyles.color;//"#261B28";
 	page.style.height = "";
 	page.style.opacity = "";
 	for (var i = 0; i < pages.length; i++)
@@ -94,7 +97,8 @@ function switchPage(key)
 	{
 		if (tabs[i].id != key + "Tab")
 		{
-			tabs[i].style.backgroundColor = "";
+			tabs[i].style.backgroundColor = "#261B28";
+			tabs[i].style.color = "#F0F0F0";
 		}
 	}
 }
