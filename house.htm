@@ -9,7 +9,7 @@
 <body onscroll="dockTabs()">
 
 <div id="titleDiv">
-	<h1 id="titleH1">House For Sale By Owner</h1>
+	<h1 id="titleH1">Home For Sale By Owner</h1>
 	<p id="subtitleP">377 West 120 South Lindon, Utah 84042</p>
 	
 </div>
@@ -29,7 +29,7 @@
 	<div id="homePage" class="pages">
 		<div id="homeDiv1">
 			<div id="homeImg" class="image" data-content="Veiw more" onclick="enlargeImage(0)">
-				<img src="house1.jpg" />
+				<img src="assets/house/house1.jpg" />
 			</div>
 			<div id="homeDiv2">
 				<p id="homeP1">$480,000</p>
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<div id="galleryPage" class="pages">
-		<h1>Gallery</h1>
+		<h1 id="galTitleH1">Gallery</h1>
 		<div id="galDiv01">
 		</div>
 	</div>
@@ -117,7 +117,7 @@ function loadImages()
 	var perCol = 10;
 	for(var i = 1; i < 29; i++)
 	{
-		housePics.push("house" + i + ".jpg");
+		housePics.push("assets/house/house" + i + ".jpg");
 	}
 	for (var i = 0; i < 3; i++)
 	{
@@ -166,7 +166,7 @@ function switchPage(key)
 	var tab = document.getElementById(key + "Tab");
 	var tabs = document.getElementsByClassName("tabs");
 
-	tab.style.backgroundColor = "rgba(175, 175, 175, 0.4)";
+	tab.style.backgroundColor = "rgba(175, 175, 175, 0.7)";
 	page.style.height = "";
 	page.style.opacity = "";
 	for (var i = 0; i < pages.length; i++)
@@ -183,6 +183,11 @@ function switchPage(key)
 		{
 			tabs[i].style.backgroundColor = "";
 		}
+	}
+	if (key == "gallery") {
+		document.getElementsByTagName("body")[0].style.height = "auto";
+	} else {
+		document.getElementsByTagName("body")[0].style.height = "100%";
 	}
 	window.scrollTo(0, 0);
 }

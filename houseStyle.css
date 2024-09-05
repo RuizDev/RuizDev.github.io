@@ -12,11 +12,11 @@ body {
 	text-align: center;
 	align-content: center;
 	display: block;
-	height: 100%;
+	height: auto;
 }
 #bodyDiv {
 	background-color: rgba(0, 0, 0, 0.31);
-	height: auto;
+	height: 100%;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -39,7 +39,7 @@ p {
 	max-width: 100%;
 	width: 100%;
 	overflow: hidden;
-	background-color: rgba(54, 54, 54, 0.6);
+	background-color: rgba(10, 10, 10, 0.9);
 	transition: all 0.5s ease;
 	z-index: 1;
 }
@@ -50,7 +50,7 @@ p {
 	font-family: sans-serif;
 	font-size: 36px;
 	font-weight: bold;
-	color: #04B4AE;
+	color: #8dfefa;
 	opacity: 0.9;
 }
 #subtitleP {
@@ -73,15 +73,15 @@ p {
 	height: auto;
 	display: inline-flex;
 	float: left;
-	background-color: rgba(54, 54, 54, 0.6);
+	background-color: rgba(10, 10, 10, 0.9);
 	left: 0;
-	top: 80px;
+	top: 79px;
 	z-index: 1;
 }
 .tabs {
 	height: 30px;
 	width: 100px;
-	background-color: rgba(135, 135, 135, 0.2);
+	background-color: rgba(193, 193, 193, 0.3);
 	margin-left: 20px;
 	margin-top: 0px;
 	border-top-right-radius: 10px;
@@ -91,11 +91,11 @@ p {
 	cursor: pointer;
 }
 .tabs:hover {
-	background-color: rgba(135, 135, 135, 0.7);
+	background-color: rgba(194, 194, 194, 0.8);
 	transition: background-color 0.3s ease-out;
 }
 .tabs:active {
-	background-color: rgba(135, 135, 135, 1);
+	background-color: rgb(210, 210, 210);
 	transition: background-color 0.3s ease-out;
 }
 .tabsP {
@@ -184,6 +184,9 @@ p {
 	height: auto;
 	align-self: center;
 	padding: 6px;
+}
+#galTitleH1 {
+	margin-top: 30px;
 }
 .galImagesLand {
 	width: 332px;
