@@ -191,8 +191,9 @@ h1 {
 html {
     height: 100%;
     min-width: 1084px;
-    background-image: url("assets/city_rain_bg.jpeg");
+    background-image: url("assets/mushroom_forest.jpeg");
 	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 body {
@@ -203,7 +204,7 @@ body {
     display: block;
     transition: all 0.5s ease;
     height: 100%;
-	background-color: rgba(35, 35, 35, 0.4);
+	background-color: rgba(35, 35, 35, 0.6);
 }
 
 h1 {
@@ -270,10 +271,6 @@ h2 {
     display: inline-flex;
     transition: all 0.5s ease;
     box-shadow: none;
-}
-
-#projectsTab {
-    
 }
 
 .tabs {
@@ -345,7 +342,7 @@ h2 {
 	height: auto;
 	overflow: hidden;
 	border-radius: 12px;
-	background-color: rgba(37, 37, 37, 0.8);
+	background-color: rgba(236, 236, 236, 0.5);
 	transition: all 0.7s ease;
 	cursor: pointer;
 	padding-bottom: 0px;
@@ -360,15 +357,17 @@ h2 {
 .list {
 	margin:10px auto 0px auto;
 	display: inline-flex;
-	max-width:75%;
-	width: 75%;
+	justify-content: space-between;
+	max-width: 1500px;
+	width: 60%;
+	min-width: 800px;
 	overflow: hidden;
 	/* box-shadow: 0px 3px 3px 1px #838383; */
 	border-radius: 12px;
 	/* border-color: #aeaeae;
 	border-style: groove;
 	border-width: 3px; */
-	background-color: rgba(37, 37, 37, 0.8);
+	background-color: rgba(236, 236, 236, 0.5);
 	transition: all 0.7s ease;
 	cursor: pointer;
 	padding-bottom: 0px;
@@ -380,11 +379,12 @@ h2 {
 
 .listTitle {
     margin-left: 20px;
+	margin-top: auto;
+	margin-bottom: auto;
     font-family: Helvetica, Arial, sans-serif;
     font-weight: bolder;
     font-size: 24px;
-    opacity: .9;
-    color: #f5f5f5;
+    color: #1b1b1b;
 }
 
 .listImage {
@@ -396,13 +396,14 @@ h2 {
 }
 
 .listSubtitle {
-    margin-left: 20px;
+    margin-left: auto;
     margin-right: 25px;
+	margin-top: auto;
+	margin-bottom: auto;
     font-family: Helvetica, Arial, sans-serif;
-    font-weight: bolder;
+    font-weight: normal;
     font-size: 22px;
-    opacity: .9;
-    color: #dedede;
+    color: #3b3b3b;
 }
 
 .listSubDiv {
@@ -410,15 +411,14 @@ h2 {
     border-radius: 10px;
     margin-left: 10px;
     margin-bottom: 0px;
-    display: inline-flex;
-    float: right;
+	display: flex;
+	justify-content: space-evenly;
 }
 
 .listDiv {
     border-radius: 10px;
     margin-left: 0px;
     display: inline-flex;
-    float: left;
 }
 
 .spacerDiv {
